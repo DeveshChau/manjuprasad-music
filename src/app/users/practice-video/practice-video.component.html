@@ -1,0 +1,13 @@
+<app-header></app-header>
+<div class="mat-title">“An amateur practices until he can do a thing right, a professional until he can't do it wrong.”</div>
+
+<mat-grid-list cols="3" rowHeight="100px">
+    <mat-grid-tile *ngFor="let video of videoUrls" [colspan]="1" [rowspan]="2">
+        <mat-card class="example-card">
+            <mat-card-content>
+                <iframe [src]="video" frameborder="0"
+                    allow="accelerometer; encrypted-media; gyroscope" allowfullscreen></iframe>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
