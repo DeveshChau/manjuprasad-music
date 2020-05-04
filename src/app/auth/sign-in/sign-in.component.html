@@ -1,0 +1,24 @@
+<mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile [colspan]="1" [rowspan]="2">
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="4">
+        <mat-card>
+            <h1>Login Form</h1>
+            <form>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Ex. pat@example.com" type="email">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="test@123" type="password">
+                </mat-form-field>                
+                <br>
+                <button mat-raised-button color="accent">Login</button>
+            </form>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2">
+    </mat-grid-tile>
+</mat-grid-list>

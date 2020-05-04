@@ -10,13 +10,17 @@ import { AdminComponent } from './admin/admin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PracticeVideoComponent } from './users/practice-video/practice-video.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     PracticeVideoComponent,
-    HeaderComponent
+    HeaderComponent,
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

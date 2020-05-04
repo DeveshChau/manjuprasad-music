@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/manjuprasad-music",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

@@ -16,6 +16,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 const material = [
   FormsModule,
   MatButtonModule,
@@ -33,7 +35,9 @@ const material = [
   MatGridListModule,
   MatStepperModule,
   MatInputModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatFormFieldModule,
+  MatSelectModule
 ]
 @NgModule({
   imports: [material],
