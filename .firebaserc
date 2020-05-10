@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "manjuprasad-music"
+  },
+  "targets": {
+    "manjuprasad-music": {
+      "hosting": {
+        "manjuprasad-music": [
+          "manjuprasad-music"
+        ]
+      }
+    }
   }
 }

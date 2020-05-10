@@ -1,1 +1,5 @@
-<p>admin works</p>
+<ul>
+    <li *ngFor="let user of users | async">
+        <div (click)="addVideo(user.uid)">{{user.uid}}</div>
+    </li>
+</ul>

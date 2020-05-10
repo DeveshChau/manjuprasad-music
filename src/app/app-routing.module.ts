@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'practiceVideos', component: PracticeVideoComponent },
   { path: 'signUp', component: SignUpComponent },
   { path: 'signIn', component: SignInComponent },
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', redirectTo: '/practiceVideos', pathMatch: 'full' },
   { path: '**', component: AdminComponent }
 ];
 

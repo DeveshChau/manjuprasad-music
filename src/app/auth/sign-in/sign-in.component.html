@@ -4,15 +4,15 @@
     <mat-grid-tile [colspan]="2" [rowspan]="4">
         <mat-card>
             <h1>Login Form</h1>
-            <form>
+            <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
                 <mat-form-field>
                     <mat-label>Email</mat-label>
-                    <input matInput placeholder="Ex. pat@example.com" type="email">
+                    <input matInput placeholder="Ex. pat@example.com" type="email" formControlName="email">
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>Password</mat-label>
-                    <input matInput placeholder="test@123" type="password">
+                    <input matInput placeholder="test@123" type="password" formControlName="password">
                 </mat-form-field>                
                 <br>
                 <button mat-raised-button color="accent">Login</button>

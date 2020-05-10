@@ -4,31 +4,36 @@
     <mat-grid-tile [colspan]="2" [rowspan]="4">
         <mat-card>
             <h1>Registration Form</h1>
-            <form>
+            <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
                 <mat-form-field>
                     <mat-label>First Name</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="firstName">
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>Last Name</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="lastName">
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>Email</mat-label>
-                    <input matInput placeholder="Ex. pat@example.com" type="email">
+                    <input matInput placeholder="Ex. pat@example.com" type="email" formControlName="email">
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>Password</mat-label>
-                    <input matInput placeholder="test@123" type="password">
+                    <input matInput placeholder="test@123" type="password" formControlName="password">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput placeholder="test@123" type="text" formControlName="confirmpPssword">
                 </mat-form-field>
                 <br>
                 <mat-form-field appearance="fill">
                     <mat-label>Grade</mat-label>
-                    <mat-select>
-                        <mat-option *ngFor="let grade of grades" value="grade">{{grade}}</mat-option>
+                    <mat-select formControlName="grade">
+                        <mat-option *ngFor="let grade of grades" [value]="grade">{{grade}}</mat-option>
                     </mat-select>
                 </mat-form-field>
                 <br>
