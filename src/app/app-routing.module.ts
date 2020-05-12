@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'signUp', component: SignUpComponent },
   { path: 'signIn', component: SignInComponent },
   { path: 'attendance', component: AttendanceComponent },
-  { path: '', redirectTo: '/attendance', pathMatch: 'full' },
+  { path: '', redirectTo: '/signIn', pathMatch: 'full' },
   { path: '**', component: AdminComponent }
 ];
 

@@ -42,7 +42,7 @@ export class AuthService {
   signIn(email: string, password: string) {
     this.auth.signInWithEmailAndPassword(email, password)
       .then(
-        () => this.router.navigate(['/'])
+        () => this.router.navigate(['/attendance'])
       )
       .catch(
         error => console.log(error)
