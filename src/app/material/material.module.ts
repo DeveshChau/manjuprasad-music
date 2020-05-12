@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
 const material = [
   FormsModule,
   MatButtonModule,
@@ -37,7 +38,8 @@ const material = [
   MatInputModule,
   MatAutocompleteModule,
   MatFormFieldModule,
-  MatSelectModule
+  MatSelectModule,
+  MatTableModule
 ]
 @NgModule({
   imports: [material],

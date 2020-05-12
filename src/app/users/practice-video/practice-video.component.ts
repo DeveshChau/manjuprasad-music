@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class PracticeVideoComponent implements OnInit {
   public videoUrls: SafeResourceUrl[];
   public name: string;
-  public currentUser: string;
+  public currentUserId: string;
   public rootRef: firebase.database.Reference;
   constructor(
     private _sanitizer: DomSanitizer,
@@ -20,15 +20,19 @@ export class PracticeVideoComponent implements OnInit {
 
   ngOnInit(): void {
     this.rootRef = this.firebaseDatabase.database.ref();
-    this.currentUser = this.auth.getCurrentUserId();
+    this.currentUserId = this.auth.getCurrentUserId();
     this.getVideoHub()
   }
 
   public getVideoHub() {
-    this.rootRef.child('user/' + this.currentUser).child('videoHub').once('value', snap => {
+    this.rootRef.child('videoHub/' + this.currentUserId).once('value')
+    .then((snap) => {
       this.videoUrls = Object.values(snap.val()).map(          
         (url: string) => this._sanitizer.bypassSecurityTrustResourceUrl(url)
       );
+    })
+    .catch((err) => {
+      console.log(err);
     })
   }
 }

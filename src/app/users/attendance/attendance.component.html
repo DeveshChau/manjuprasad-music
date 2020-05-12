@@ -1,0 +1,93 @@
+<h1>User Profile</h1>
+<div>{{userProfile.firstName}} {{userProfile.lastName}}, {{userProfile.grade}}</div>
+<h2>Batch Info</h2>
+<mat-grid-list cols="6" rowHeight="100px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Start Date</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                {{batch.startDate}}
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>End Date</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                {{batch.endDate}}
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Batch Day</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                {{batch.day}}
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Batch Time</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                {{batch.time}}
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Fees Status</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                {{batch.feeStatus}}
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Fees Date</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                {{batch.feeDate}}
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+<h3>Attendance</h3>
+
+<table mat-table [dataSource]="attendance" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date. </th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="topic">
+        <th mat-header-cell *matHeaderCellDef> Topic </th>
+        <td mat-cell *matCellDef="let element"> {{element.topic}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

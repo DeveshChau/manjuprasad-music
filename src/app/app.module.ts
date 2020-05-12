@@ -16,6 +16,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { environment } from 'src/environments/environment';
 import { QuotesComponent } from './shared/quotes/quotes.component';
+import { AttendanceComponent } from './users/attendance/attendance.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { QuotesComponent } from './shared/quotes/quotes.component';
     HeaderComponent,
     SignUpComponent,
     SignInComponent,
-    QuotesComponent
+    QuotesComponent,
+    AttendanceComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,18 @@
+<h1>Add video</h1>
 <ul>
     <li *ngFor="let user of users | async">
         <div (click)="addVideo(user.uid)">{{user.uid}}</div>
+    </li>
+</ul>
+<h1>Mark Attendance</h1>
+<ul>
+    <li *ngFor="let user of users | async">
+        <div (click)="markAttendance(user.uid)">{{user.uid}}</div>
+    </li>
+</ul>
+<h1>Manage Batch</h1>
+<ul>
+    <li *ngFor="let user of users | async">
+        <div (click)="manageBatch(user.uid)">{{user.uid}}</div>
     </li>
 </ul>

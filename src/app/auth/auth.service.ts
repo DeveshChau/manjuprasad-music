@@ -27,11 +27,9 @@ export class AuthService {
             email: proileObj.email,
             grade: proileObj.grade,
             firstName: proileObj.firstName,
-            lastName: proileObj.lastName,
-            videoHub: {0: 'https://www.youtube.com/embed/XN63cgiJJIo'}
-              
+            lastName: proileObj.lastName
           };
-          this.db.database.ref('user/' + user.uid).set(user).catch(error => {
+          this.db.database.ref('userProfile/' + user.uid).set(user).catch(error => {
             console.log(error.message)
           });
         }
