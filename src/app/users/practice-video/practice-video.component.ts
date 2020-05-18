@@ -13,6 +13,7 @@ export class PracticeVideoComponent implements OnInit {
   public name: string;
   public currentUserId: string;
   public rootRef: firebase.database.Reference;
+  public videoLoader: boolean;
   constructor(
     private _sanitizer: DomSanitizer,
     private auth: AuthService,
@@ -25,14 +26,17 @@ export class PracticeVideoComponent implements OnInit {
   }
 
   public getVideoHub() {
+    this.videoLoader = true;
     this.rootRef.child('videoHub/' + this.currentUserId).once('value')
     .then((snap) => {
       this.videoUrls = Object.values(snap.val()).map(          
         (url: string) => this._sanitizer.bypassSecurityTrustResourceUrl(url)
       );
+      this.videoLoader = false;
     })
     .catch((err) => {
       console.log(err);
+      this.videoLoader = false;
     })
   }
 }

@@ -1,23 +1,29 @@
+<mat-card *ngIf="showError">
+    {{errorMsg}}
+</mat-card>
 <mat-grid-list cols="4" rowHeight="100px">
     <mat-grid-tile [colspan]="1" [rowspan]="2">
     </mat-grid-tile>
     <mat-grid-tile [colspan]="2" [rowspan]="4">
-        <mat-card>
-            <h1>Login Form</h1>
-            <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
-                <mat-form-field>
-                    <mat-label>Email</mat-label>
-                    <input matInput placeholder="Ex. pat@example.com" type="email" formControlName="email">
-                </mat-form-field>
-                <br>
-                <mat-form-field>
-                    <mat-label>Password</mat-label>
-                    <input matInput placeholder="test@123" type="password" formControlName="password">
-                </mat-form-field>                
-                <br>
-                <button mat-raised-button color="accent">Login</button>
-            </form>
-        </mat-card>
+        <app-loader *ngIf="loader; else showForm"></app-loader>
+        <ng-template #showForm>
+            <mat-card>
+                <h1>Login Form</h1>
+                <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Ex. pat@example.com" type="email" formControlName="email">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="test@123" type="password" formControlName="password">
+                    </mat-form-field>
+                    <br>
+                    <button mat-raised-button color="accent">Login</button>
+                </form>
+            </mat-card>
+        </ng-template>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="2">
     </mat-grid-tile>

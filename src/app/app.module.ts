@@ -17,6 +17,7 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { environment } from 'src/environments/environment';
 import { QuotesComponent } from './shared/quotes/quotes.component';
 import { AttendanceComponent } from './users/attendance/attendance.component';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AttendanceComponent } from './users/attendance/attendance.component';
     SignUpComponent,
     SignInComponent,
     QuotesComponent,
-    AttendanceComponent
+    AttendanceComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
